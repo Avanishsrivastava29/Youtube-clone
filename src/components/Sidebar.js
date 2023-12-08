@@ -8,8 +8,12 @@ import musicIcon from "../assets/musical-note.png"
 import newsIcon from "../assets/newspaper.png"
 import shopIcon from "../assets/bag.png";
 import gamingIcon from "../assets/console.png"
+import { useSelector } from 'react-redux'
 
 const Sidebar = () => {
+  const isMenuOpen =useSelector(store=>store.app.isMenuOpen);
+  if(!isMenuOpen)
+  return null;
   return (
     <div className="w-48 shadow-lg pl-4 h-auto absolute z-30 bg-white pb-2">
     <div className="flex flex-col gap-3 pt-5">
