@@ -9,6 +9,7 @@ import newsIcon from "../assets/newspaper.png"
 import shopIcon from "../assets/bag.png";
 import gamingIcon from "../assets/console.png"
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Sidebar = () => {
   const isMenuOpen =useSelector(store=>store.app.isMenuOpen);
@@ -19,7 +20,7 @@ const Sidebar = () => {
     <div className="flex flex-col gap-3 pt-5">
       <div className="flex justify-start items-center gap-5 hover:bg-gray-300 hover:border hover:rounded-lg hover:w-40 cursor-pointer p-2">
         <img src={homeIcon} alt="home-icon" className="w-5" />
-        <h1 className="font-bold">Home</h1>
+       <Link to="/"> <h1 className="font-bold">Home</h1></Link> 
       </div>
 
       <div className="flex justify-start items-center gap-5 hover:bg-gray-300 hover:border hover:rounded-lg hover:w-40 cursor-pointer p-2">
