@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { toggleMenu } from '../utils/appSlice';
+import { YOUTUBE_SEARCH_API } from '../config/api';
 
 
 const Head = () => {
+
+  const [searchQuery,setSearchQuery]=useState("");
+ 
+
+  useEffect(() => {
+    const timer=setTimeout(() => 
+    getSearchSuggestions()
+    
+  ,  200);
+  return ()=>clearTimeout(timer)
+
+  }, [searchQuery]);
+
+  const getSearchSuggestions=async()=>{
+    console.log("API CALL"+searchQuery)
+    const data=await fetch(YOUTUBE_SEARCH_API+searchQuery)
+    const json=await data.json();
+    //console.log(json[1]);
+  }
+  
+
+
   const dispatch=useDispatch();
 
   const toggleMenuHandler=()=>{
@@ -19,7 +42,11 @@ const Head = () => {
         <img className='h-14 mx-2' src="https://images.indianexpress.com/2017/08/youtube_logo_new-759.jpg" alt='youtube-logo'/>
         </div>
         <div className='col-span-10 px-10 mt-2'>
-            <input className='w-1/2 border border-gray-400  p-2 rounded-l-full' type='text'/>
+            <input 
+            className='w-1/2 border border-gray-400  p-2 rounded-l-full' 
+            value={searchQuery}
+            onChange={(e)=>setSearchQuery(e.target.value)}
+            type='text'/>
             <button className='border border-gray-400  p-2 rounded-r-full'><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
         <div className='col-span-1'>

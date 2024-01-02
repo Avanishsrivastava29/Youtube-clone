@@ -14,8 +14,7 @@ const [videos,setVideos]=useState([])
   const getVideos= async()=>{
     const data = await fetch(YOUTUBE_MOST_POPULAR_VIDEOS_API);
     const  json =await data.json();
-    setVideos(json.items
-      )
+    setVideos(json.items)
   }
   return (
     <div
