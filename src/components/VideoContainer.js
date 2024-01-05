@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { YOUTUBE_MOST_POPULAR_VIDEOS_API } from "../config/api";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 const VideoContainer = ({
   videos,
