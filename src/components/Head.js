@@ -19,7 +19,7 @@ const Head = ({ videos, setVideos, filterVideos, setFilterVideos }) => {
       items.snippet.channelTitle.toLowerCase().includes(query.toLowerCase())
     );
 
-    console.log(filterData);
+    // console.log(filterData);
 
     setFilterVideos(filterData);
   };
