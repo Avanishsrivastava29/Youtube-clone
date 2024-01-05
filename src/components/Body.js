@@ -1,20 +1,32 @@
-import React from 'react'
-import Sidebar from './Sidebar'
- 
-import MainContainer from './MainContainer'
-import { Outlet } from 'react-router-dom'
+import React from "react";
+import Sidebar from "./Sidebar";
+
+import MainContainer from "./MainContainer";
+import { Outlet } from "react-router-dom";
+import Head from "./Head";
+import { useState } from "react";
 
 const Body = () => {
+  const [videos, setVideos] = useState([]);
+  const [filterVideos, setFilterVideos] = useState(videos);
+
   return (
     <>
-    <div className='flex'>
+      <Head
+        {...{
+          videos,
+          setVideos,
+          filterVideos,
+          setFilterVideos,
+        }}
+      />
+      <div className="flex">
+        <Sidebar />
 
-   <Sidebar/>
-
- <Outlet/>
-    </div>
+        <Outlet context={[videos, setVideos, filterVideos, setFilterVideos]} />
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Body
+export default Body;
