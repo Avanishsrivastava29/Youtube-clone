@@ -16,7 +16,7 @@ const Head = ({ videos, setVideos, filterVideos, setFilterVideos }) => {
     setSearchQuery(query);
 
     const filterData = videos.filter((items) =>
-      items.snippet.channelTitle.toLowerCase().includes(query.toLowerCase())
+      items?.snippet?.title.toLowerCase()?.includes(query.toLowerCase())
     );
 
     // console.log(filterData);
