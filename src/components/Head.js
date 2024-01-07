@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/appSlice";
 import { YOUTUBE_SEARCH_API } from "../config/api";
 import { cacheResults } from "../utils/searchslice";
+import { Link } from "react-router-dom";
 
 const Head = ({ videos, setVideos, filterVideos, setFilterVideos }) => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -57,7 +58,7 @@ const Head = ({ videos, setVideos, filterVideos, setFilterVideos }) => {
     dispatch(toggleMenu());
   };
   return (
-    <div className="grid grid-flow-col p-2 m-2 shadow-lg">
+    <div className="grid grid-flow-col p-2   shadow-lg w-full">
       <div className=" flex items-center col-span-1">
         <img
           onClick={() => toggleMenuHandler()}
@@ -66,11 +67,14 @@ const Head = ({ videos, setVideos, filterVideos, setFilterVideos }) => {
           alt="menu"
         />
 
-        <img
-          className="h-14 mx-2"
-          src="https://images.indianexpress.com/2017/08/youtube_logo_new-759.jpg"
-          alt="youtube-logo"
-        />
+        <Link to="/">
+          {" "}
+          <img
+            className="h-14 mx-2"
+            src="https://images.indianexpress.com/2017/08/youtube_logo_new-759.jpg"
+            alt="youtube-logo"
+          />
+        </Link>
       </div>
       <div className="col-span-10 px-10 mt-1">
         <div>
