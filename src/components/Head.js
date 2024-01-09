@@ -57,7 +57,7 @@ const Head = ({ videos, setVideos, filterVideos, setFilterVideos }) => {
     dispatch(toggleMenu());
   };
   return (
-    <div className=" grid grid-flow-col   h-12 md:h-16  shadow-lg  w-[320px] sm:w-[640px]  md:w-full overflow-hidden">
+    <div className=" grid grid-flow-col   h-12 md:h-16  shadow-lg  w-[320px]    md:w-full overflow-hidden">
       <div className="flex items-center col-span-3 ">
         <img
           onClick={() => toggleMenuHandler()}
