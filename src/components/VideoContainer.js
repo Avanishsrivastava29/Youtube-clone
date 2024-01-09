@@ -24,7 +24,7 @@ const VideoContainer = ({
     setFilterVideos(json.items);
   };
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-wrap items-center justify-center">
       {filterVideos.map((videos) => (
         <Link to={"/watch?v=" + videos.id} key={videos.id}>
           <VideoCard key={videos.id} info={videos} />

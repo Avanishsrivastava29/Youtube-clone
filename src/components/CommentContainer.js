@@ -8,16 +8,6 @@ const CommentData = [
       {
         name: "Channel XYZ",
         comment: "Thanks, John! We aim to provide quality content.",
-        replies: [
-          {
-            name: "John Doe",
-            comment: "You are doing a great job, Channel XYZ!",
-          },
-          {
-            name: "Another User",
-            comment: "I learned a lot from this channel!",
-          },
-        ],
       },
       {
         name: "Another User",
@@ -69,15 +59,15 @@ const Comment = ({ data }) => {
       <div>
         <img
           alt="user"
-          className="w-10 h-10"
+          className="md:w-10 w-8"
           src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg"
         />
       </div>
       <div className="px-3">
-        <p className="font-bold">{name}</p>
-        <p>{comment}</p>
+        <p className="font-bol text-[10px] md:text-sm">{name}</p>
+        <p className="text-[10px] md:text-sm">{comment}</p>
         {replies && (
-          <div className="ml-5">
+          <div className=" text-[10px] md:text-sm">
             {replies.map((reply, index) => (
               <Comment data={reply} key={index} />
             ))}
