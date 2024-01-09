@@ -78,7 +78,7 @@ const Head = ({ videos, setVideos, filterVideos, setFilterVideos }) => {
       <div className="col-span-9 mx-4  mt-3" id="input">
         <div>
           <input
-            className="md:w-1/2 border  w-24 md:h-10 border-gray-400   rounded-l-full"
+            className="md:w-1/2 border  w-24 md:h-10 px-2 border-gray-400   rounded-l-full"
             value={searchQuery}
             onChange={(e) => handleSearch(e.target.value)}
             onFocus={() => setShowSuggestion(true)}
