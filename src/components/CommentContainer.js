@@ -65,7 +65,7 @@ const Comment = ({ data }) => {
   const { name, comment, replies } = data;
 
   return (
-    <div className="flex shadow-sm bg-gray-50 rounded-lg m-2 p-2 border border-gray-200">
+    <div className="flex shadow-sm bg-gray-50 rounded-lg m-1 p-2 border border-gray-200">
       <div>
         <img
           alt="user"

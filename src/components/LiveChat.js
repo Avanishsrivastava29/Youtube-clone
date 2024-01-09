@@ -24,7 +24,7 @@ const LiveChat = () => {
   }, []);
   return (
     <>
-      <div className="h-96 w-96  p-2 ml-2 border border-black rounded-l-md overflow-y-scroll flex flex-col-reverse">
+      <div className="md:h-96 md:w-96 h-96  mt-2 md:p-2 md:ml-2 border border-black rounded-l-md overflow-y-scroll flex flex-col-reverse">
         {ChatMessages.map((c, i) => (
           <ChatMessage key={i} name={c.name} comment={c.message} />
         ))}
@@ -41,15 +41,17 @@ const LiveChat = () => {
             })
           );
         }}
-        className=" w-96 m-2 p-2 border border-black rounded-lg"
+        className=" md:w-96   m-1 p-2 border border-black rounded-lg"
       >
         <input
-          className="px-2 mr-2 w-72"
+          className="px-2 mr-2 md:w-72 "
           type="text"
           value={liveMessage}
           onChange={(e) => setLiveMessage(e.target.value)}
         />
-        <button className="bg-green-100 mx-2 px-2 rounded-lg">send</button>
+        <button className="bg-green-100  mx-8 md:mx-2 px-2 rounded-lg">
+          send
+        </button>
       </form>
     </>
   );
